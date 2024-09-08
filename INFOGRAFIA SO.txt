@@ -1,0 +1,23 @@
+1. Introducción
+"El sistema operativo es el software que permite que una computadora funcione de manera eficiente, gestionando el hardware y facilitando la ejecución de aplicaciones. A lo largo de la historia, han evolucionado para mejorar tanto en términos de accesibilidad como en su capacidad para manejar tareas complejas. Vamos a revisar cómo ha sido esa evolución y los tipos de sistemas operativos que existen hoy."
+
+2. Primera generación (1950s)
+"En los años 50, los sistemas operativos eran muy básicos. Eran conocidos como sistemas de procesamiento por lotes, lo que significa que se ejecutaba un solo programa a la vez sin intervención del usuario. Estos sistemas requerían que se ingresaran instrucciones a través de tarjetas perforadas o cintas magnéticas, lo cual era un proceso manual y lento."
+
+3. Multiprogramación (1960s)
+"En los años 60 se dio un gran avance con la multiprogramación, que permitió ejecutar varios programas al mismo tiempo. Esto maximizó el uso del procesador, ya que mientras un programa esperaba recursos, otro podía continuar. Sistemas como CTSS en 1961 y Multics en 1965 introdujeron la idea de tiempo compartido, permitiendo que varios usuarios interactuaran simultáneamente con una computadora."
+
+4. Interfaces gráficas (1980s)
+"Los sistemas operativos dieron un salto hacia la accesibilidad en los 80 con la introducción de interfaces gráficas. En 1984, Apple lanzó el primer Mac OS con una interfaz visual que hizo que las computadoras fueran más fáciles de usar para el público general. Microsoft siguió poco después con Windows en 1985, marcando el comienzo de una nueva era en la interacción entre usuarios y máquinas."
+
+5. Sistemas de tiempo real (1970s)
+"Los sistemas operativos de tiempo real, desarrollados en los años 70, se diseñaron para aplicaciones críticas donde el tiempo de respuesta es vital, como en aviones o equipos médicos. A diferencia de otros sistemas, un RTOS garantiza que las tareas se completen en un tiempo predecible, evitando retrasos que podrían ser peligrosos."
+
+6. Sistemas distribuidos (1990s)
+"Con el crecimiento de Internet en los años 90, surgieron los sistemas operativos distribuidos. Estos permitieron que múltiples computadoras en red trabajaran juntas como si fueran un solo sistema. Así, se podían compartir recursos y procesos de manera eficiente, aumentando la capacidad de procesamiento y reduciendo riesgos de fallas."
+
+7. Sistemas móviles (2000s)
+"Con la llegada de los smartphones a principios de los 2000, se desarrollaron sistemas operativos móviles como iOS en 2007 y Android en 2008. Estos sistemas están optimizados para dispositivos de menor potencia, enfocándose en la eficiencia de la batería y en permitir una conectividad constante, lo que cambió radicalmente la forma en que interactuamos con la tecnología."
+
+8. Tendencias futuras (2020s y más allá)
+"Hoy en día, las tendencias en los sistemas operativos se dirigen hacia la virtualización y el uso de contenedores, que permiten ejecutar múltiples entornos en una sola máquina física. También se espera que la inteligencia artificial juegue un papel importante en el futuro, ayudando a mejorar la gestión de recursos y la seguridad en los sistemas operativos."
