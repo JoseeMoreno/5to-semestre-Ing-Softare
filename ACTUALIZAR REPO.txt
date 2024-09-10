@@ -1,0 +1,7 @@
+1. Abrir la terminal
+2. Cambiar el directorio
+3. git init
+4. git add .
+5. git commit -m "Commit"
+6. git push origin main
+7. Listo :)
