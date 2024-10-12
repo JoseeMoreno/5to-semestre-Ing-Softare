@@ -1,0 +1,175 @@
+# Patrón Plantilla
+class Documento:
+    def crear_documento(self):
+        self.crear_titulo()
+        self.crear_cuerpo()
+        self.crear_firma()
+
+    def crear_titulo(self):
+        pass
+
+    def crear_cuerpo(self):
+        pass
+
+    def crear_firma(self):
+        pass
+
+
+class Carta(Documento):
+    def crear_titulo(self):
+        print("Título: Carta Formal")
+
+    def crear_cuerpo(self):
+        print("Cuerpo: Estimado Sr. Perez...")
+
+    def crear_firma(self):
+        print("Firma: Atentamente, José")
+
+
+# Patrón Estado
+class Estado:
+    def manejar(self, dispositivo):
+        pass
+
+
+class EstadoActivo(Estado):
+    def manejar(self, dispositivo):
+        print("Dispositivo activado.")
+        dispositivo.cambiar_estado(EstadoInactivo())
+
+
+class EstadoInactivo(Estado):
+    def manejar(self, dispositivo):
+        print("Dispositivo desactivado.")
+        dispositivo.cambiar_estado(EstadoActivo())
+
+
+class Dispositivo:
+    def __init__(self):
+        self.estado = EstadoInactivo()
+
+    def cambiar_estado(self, estado):
+        self.estado = estado
+
+    def presionar_boton(self):
+        self.estado.manejar(self)
+
+
+# Patrón Iterador
+class IteradorNumeros:
+    def __init__(self, numeros):
+        self.numeros = numeros
+        self.indice = 0
+
+    # El iterador debe tener el método __iter__
+    def __iter__(self):
+        return self
+
+    # Y el método __next__
+    def __next__(self):
+        if self.indice < len(self.numeros):
+            numero = self.numeros[self.indice]
+            self.indice += 1
+            return numero
+        else:
+            raise StopIteration
+
+
+# Patrón Composición
+class Grafico:
+    def dibujar(self):
+        pass
+
+
+class Circulo(Grafico):
+    def dibujar(self):
+        print("Dibujar un círculo.")
+
+
+class Rectangulo(Grafico):
+    def dibujar(self):
+        print("Dibujar un rectángulo.")
+
+
+class GrupoGraficos(Grafico):
+    def __init__(self):
+        self.graficos = []
+
+    def agregar(self, grafico):
+        self.graficos.append(grafico)
+
+    def dibujar(self):
+        for grafico in self.graficos:
+            grafico.dibujar()
+
+
+# Ejemplos de Uso
+
+# Ejemplo del Patrón Plantilla
+print("Ejemplo Plantilla:")
+carta = Carta()
+carta.crear_documento()
+
+# Ejemplo del Patrón Estado
+print("\nEjemplo Estado:")
+dispositivo = Dispositivo()
+dispositivo.presionar_boton()  # Activa el dispositivo
+dispositivo.presionar_boton()  # Desactiva el dispositivo
+
+# Ejemplo del Patrón Iterador
+print("\nEjemplo Iterador:")
+coleccion = [10, 20, 30]
+iterador = IteradorNumeros(coleccion)
+
+for numero in iterador:
+    print(numero)
+
+# Ejemplo del Patrón Composición
+print("\nEjemplo Composición:")
+grupo = GrupoGraficos()
+circulo = Circulo()
+rectangulo = Rectangulo()
+
+grupo.agregar(circulo)
+grupo.agregar(rectangulo)
+grupo.dibujar()
+
+# Pruebas Unitarias
+import unittest
+
+
+class TestPatronesDiseno(unittest.TestCase):
+    # Prueba del Patrón Plantilla
+    def test_plantilla(self):
+        documento = Carta()
+        documento.crear_documento()
+
+    # Prueba del Patrón Estado
+    def test_estado(self):
+        dispositivo = Dispositivo()
+        self.assertIsInstance(dispositivo.estado, EstadoInactivo)
+        dispositivo.presionar_boton()
+        self.assertIsInstance(dispositivo.estado, EstadoActivo)
+
+    # Prueba del Patrón Iterador
+    def test_iterador(self):
+        numeros = [10, 20, 30]
+        iterador = IteradorNumeros(numeros)
+        self.assertEqual(next(iterador), 10)
+        self.assertEqual(next(iterador), 20)
+        self.assertEqual(next(iterador), 30)
+        with self.assertRaises(StopIteration):
+            next(iterador)
+
+    # Prueba del Patrón Composición
+    def test_composicion(self):
+        grupo = GrupoGraficos()
+        circulo = Circulo()
+        rectangulo = Rectangulo()
+        grupo.agregar(circulo)
+        grupo.agregar(rectangulo)
+        grupo.dibujar()
+
+
+if __name__ == '__main__':
+    unittest.main(argv=[''], exit=False)
